@@ -30,8 +30,18 @@
         1171,
         1571
       ],
-      "status": "NOT_VALIDATED_DO_NOT_SUBMIT",
-      "final_answer": null
+      "status": "TEST_COUNT_CONFIRMED_BUT_NO_FORM_OPTION_MATCH;_MODEL_AND_FEATURE_AUDIT_PENDING",
+      "final_answer": null,
+      "test_rows": 33163,
+      "train_rows": 136842,
+      "validation_rows": 32287,
+      "unique_correct_by_split": {
+        "TRAIN": 4104,
+        "VALIDATION": 0,
+        "TEST": 1243
+      },
+      "unique_correct_all": 5347,
+      "test_filter_validated_from_colab_output": true
     },
     "q4": {
       "value": 4,
@@ -40,8 +50,9 @@
       "independently_verified": false
     },
     "q5": {
-      "status": "draft_in_README"
+      "status": "draft_in_README",
+      "text": "I would add VIX and trading volume. VIX shows how uncertain the market is, while trading volume shows how active a stock is. I think these indicators could help the model predict future stock growth."
     }
   },
-  "note": "Q3 reported answer cannot be selected; verify index alignment, TRAIN+VALIDATION training, TEST-only selection, target labels, pred0–pred4, and max_depth=10 random_state=42."
+  "note": "TEST membership has been checked using new_df['split'] (33,163 test rows). The result remains 1243 and matches none of the options. Do not round or select the nearest option; inspect feature/model training and data alignment. Q3_AUDIT.md is temporary and should be removed when resolved."
 }
