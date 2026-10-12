@@ -1,0 +1,47 @@
+{
+  "course": "Stock Markets Analytics Zoomcamp",
+  "cohort": 2026,
+  "homework": 3,
+  "source": "https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/cohorts/2026/homework3.md",
+  "colab": "https://colab.research.google.com/drive/1i0mKulJ-JJ4ApGKL1rwjaqHejR3wRDKd?usp=sharing",
+  "status": "q1_q2_q4_match_form_q3_audit_required",
+  "execution_evidence": "pasted Colab output; notebook code not directly read",
+  "answers": {
+    "q1": {
+      "value": 0.025,
+      "feature": "month_wom_October_w4",
+      "month_week_dummies": 60,
+      "total_dummies": 115,
+      "form_choice_match": true,
+      "independently_verified": false
+    },
+    "q2": {
+      "value": 0.588,
+      "winning_rule": "pred3_manual_dgs10_5",
+      "other_rule_precision": 0.503,
+      "form_choice_match": true,
+      "independently_verified": false
+    },
+    "q3": {
+      "reported_value": 1243,
+      "options": [
+        271,
+        571,
+        1171,
+        1571
+      ],
+      "status": "NOT_VALIDATED_DO_NOT_SUBMIT",
+      "final_answer": null
+    },
+    "q4": {
+      "value": 4,
+      "test_precision": 0.62917,
+      "form_choice_match": true,
+      "independently_verified": false
+    },
+    "q5": {
+      "status": "draft_in_README"
+    }
+  },
+  "note": "Q3 reported answer cannot be selected; verify index alignment, TRAIN+VALIDATION training, TEST-only selection, target labels, pred0–pred4, and max_depth=10 random_state=42."
+}
