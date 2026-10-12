@@ -41,7 +41,7 @@ Notebook mengikuti sumber `iposcoop.com` untuk IPO dan memakai data Parquet resm
 - [Notebook pendamping audit HW3](hw03/hw03.ipynb)
 - [Google Colab yang telah dijalankan pengguna](https://colab.research.google.com/drive/1i0mKulJ-JJ4ApGKL1rwjaqHejR3wRDKd?usp=sharing)
 - [Jawaban serta bukti output yang disalin](hw03/answers.json)
-- [Panduan audit Q3](hw03/Q3_AUDIT.md)
+- [Audit sementara Q3 (hapus setelah terselesaikan)](hw03/Q3_AUDIT.md)
 - [Penjelasan dan jawaban eksploratif Q5](hw03/README.md)
 - [Instruksi resmi](https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/cohorts/2026/homework3.md)
 - [Form submission](https://courses.datatalks.club/sma-zoomcamp-2026/homework/hw03)
@@ -50,9 +50,9 @@ Notebook mengikuti sumber `iposcoop.com` untuk IPO dan memakai data Parquet resm
 | --- | --- | --- |
 | Q1 | **0.025** (`month_wom_October_w4`) | Cocok dengan opsi |
 | Q2 | **0.588** (`pred3_manual_dgs10_5`) | Cocok dengan opsi |
-| Q3 | **1243** | **TIDAK cocok** dengan opsi 271/571/1171/1571; perlu audit |
+| Q3 | **1243 pada 33.163 baris TEST** | **Filter TEST terkonfirmasi; masih tidak cocok** dengan opsi 271/571/1171/1571 |
 | Q4 | **4** (`TEST precision = 0.62917`) | Cocok dengan opsi |
-| Q5 | Proposal indikator tambahan | Draft eksploratif tersedia |
+| Q5 | VIX dan trading volume | Draft bahasa Inggris singkat tersedia |
 
 Angka HW3 berasal dari output Colab yang diberikan pengguna, **belum diperiksa ulang dari file notebook asli**. Notebook dalam repo merupakan *audit companion*, bukan salinan dari Colab yang telah dieksekusi.
 
