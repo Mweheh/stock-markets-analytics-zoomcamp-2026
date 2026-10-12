@@ -2,32 +2,13 @@
   "course": "Stock Markets Analytics Zoomcamp",
   "cohort": 2026,
   "homework": 2,
+  "status": "awaiting_original_notebook_and_verified_answers",
   "source": "https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/cohorts/2026/homework2.md",
-  "status": "historical_results_need_audit",
   "answers": {
-    "q1": {
-      "reported_approx_usd_millions": 499.99,
-      "verified": false
-    },
-    "q2": {
-      "previously_reported": [
-        0.04,
-        0.0501
-      ],
-      "verified": false,
-      "issue": "conflicting values and rounding"
-    },
-    "q3": {
-      "previously_computed_months": 2,
-      "median_growth_approx": 0.9473,
-      "verified": false,
-      "issue": "previous form option mismatch"
-    },
-    "q4": {
-      "previously_reported_net_income_usd": 65805.59,
-      "verified": false,
-      "issue": "rounding and dataset check required"
-    }
+    "q1": null,
+    "q2": null,
+    "q3": null,
+    "q4": null
   },
-  "note": "Do not use as final submission. All figures are historical conversation notes, not independently reproduced."
+  "note": "Not a submission key. Reproduce from official dataset and user-executed outputs."
 }
