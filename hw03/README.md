@@ -23,3 +23,8 @@ Important: numerical data above comes from a pasted Colab output, not direct acc
 I would add VIX and changes in trading volume as new features. A higher VIX can mean more market uncertainty, which may reduce the chance of positive returns. A big change in trading volume can show stronger buying or selling activity. These features may help the model predict if a stock will have a positive return in the next 30 days.
 
 The homework asks to choose the best depth using TEST precision. That follows the assignment, but is not a clean out-of-sample methodology for real-world model selection; tune on validation data and reserve TEST for one final check in future projects.
+
+
+### Latest Q3 model audit
+
+`tree10` has depth 10, seed 42, 169,129 training samples and 299 features. Predictions match stored `pred5_clf_10` exactly (100%), reproducing **1,243** unique-correct TEST rows. A separate old `clf_10` uses 239 features and has no fixed seed; it is not evidence for substituting another answer. The mismatch with the official options remains unresolved.
