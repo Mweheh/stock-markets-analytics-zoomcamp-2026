@@ -1,18 +1,14 @@
-# HW2 — Working with Financial Data in Pandas
+# HW2 — Financial Data Processing in Pandas
 
 - [Official assignment](https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/cohorts/2026/homework2.md)
 - [Submission form](https://courses.datatalks.club/sma-zoomcamp-2026/homework/hw02)
-- [Archived observations and flags](answers.json)
+- [Answer status](answers.json)
 
-## Earlier results: **audit pending**
+## Assignment
+- Q1: Highest total withdrawn IPO value by company type using **iposcoop.com** data.
+- Q2: Median Sharpe ratio as of 11 September 2026 for selected 2025 IPOs.
+- Q3: Optimal IPO holding period in months (1–12) based on median future growth.
+- Q4: Profit (USD thousands) from RSI < 30 trades in the prescribed dataset.
+- Q5: Optional exploratory improvement for IPO strategy.
 
-| Question | Earlier observations | Audit status |
-| --- | --- | --- |
-| Q1 — Withdrawn IPO highest category value | About USD 499.99 million (~500) | Recompute from iposcoop source before claiming verified |
-| Q2 — Median IPO Sharpe, 2026-09-11 | Conflicting earlier notes: 0.04 vs 0.0501 | **Conflict unresolved**; check method, actual median and form options |
-| Q3 — Optimal IPO holding period | Earlier computation indicated 2 months (~0.9473 median growth) | **Does not match earlier reported options**; inspect IPO-date join and shift direction |
-| Q4 — RSI <30 net income | Earlier output around USD 65,805.59 (~65.806 thousand) | Check exact dataset/rounding and form options |
-
-Do not report HW2 as complete or validated yet. The official questions use iposcoop.com IPO data (not the course lecture's other IPO data source), date-specific market values, and a provided Parquet file for Q4. No authenticated executed HW2 notebook was accessible here, so no notebook is invented.
-
-Q5: a proposed approach is to select IPOs using a time-ordered validation of financial quality, sector regime, valuation, liquidity and post-IPO volatility, after accounting for realistic fees and survivorship bias.
+**Evidence status:** No executed HW2 notebook or complete numerical output was accessible for independent verification. No unverified results are recorded as final answers. The official assignment notes that IPO source data and Yahoo Finance ticker availability can change, and lecture code may use a different IPO source than the homework.
