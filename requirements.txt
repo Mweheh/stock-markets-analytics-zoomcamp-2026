@@ -1,0 +1,8 @@
+numpy
+pandas
+requests
+lxml
+yfinance
+scikit-learn
+gdown
+pyarrow
