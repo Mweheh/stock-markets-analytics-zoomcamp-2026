@@ -1,0 +1,26 @@
+{
+  "course": "Stock Markets Analytics Zoomcamp",
+  "cohort": 2026,
+  "homework": 1,
+  "source": "https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/cohorts/2026/homework1.md",
+  "status": "archived_unverified_previous_submission",
+  "answers": {
+    "q1": {
+      "value": "2025",
+      "verified": false
+    },
+    "q2": {
+      "value": "2",
+      "verified": false
+    },
+    "q3": {
+      "value": "8",
+      "verified": false
+    },
+    "q4": {
+      "value": "0.35",
+      "verified": false
+    }
+  },
+  "note": "Previously reported choices; no matching executed notebook/data currently available. Earlier submission score was incomplete; do not resubmit without verification."
+}
