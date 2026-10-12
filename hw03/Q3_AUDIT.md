@@ -1,64 +1,61 @@
-# HW3 Q3 — Discrepancy audit
+# HW3 Q3 — TEMPORARY discrepancy audit
 
-**Reported Colab count: 1243. Official options: 271, 571, 1171, 1571. Do not choose an option yet.**
+**Delete this file after HW3 Q3 is resolved and validated.** It is not a homework deliverable.
 
-The official specification requires:
-1. Exactly the **TEST** records (not TRAIN/VALIDATION and not all rows).
-2. A decision tree of depth 10 and `random_state=42`, trained on the combined TRAIN+VALIDATION rows.
-3. `pred5_clf_10` predicted on the entire set in the same row order.
-4. `pred5_clf_10 == is_positive_growth_30d_future`.
-5. Every **pred0 through pred4** must differ from the target on that same row.
+## Facts established by actual user-run Colab
 
-Paste the following **diagnostic cell** after the HW3 cells that produce `new_df`. It deliberately stops if the TEST selection is ambiguous, rather than silently counting the wrong rows.
+```text
+split          rows   unique pred5 correct, all pred0..pred4 wrong
+TRAIN        136842   4104
+VALIDATION    32287   0
+TEST          33163   1243
+ALL          202292   5347
+```
+
+Official multiple-choice values: **271, 571, 1171, 1571**. None is supported by the current 1243 count.
+
+**Confirmed:** TEST-only mask using `new_df['split']` is correct. Previous `TEST_MASK` assertion was an incomplete instruction, not a model bug. **Not confirmed:** the stored tree predictions were produced with the required training data, feature columns, target, indexing and seed, or why the VALIDATION count is exactly zero.
+
+## Next diagnostic — paste ONE cell after original 2026 notebook execution
+
+No package install, retraining, or data download. This reports whether VALIDATION labels, feature predictions, or row alignments are unusual.
 
 ```python
 import pandas as pd
+from sklearn.metrics import precision_score
 
-audit_df = new_df
-TARGET = "is_positive_growth_30d_future"
-assert TARGET in audit_df.columns, "Target missing from new_df"
-
-# Discover the exact predictor column names from your existing notebook.
-pred_cols = {}
-for i in range(6):
-    choices = [c for c in audit_df.columns
-               if c == f"pred{i}" or c.startswith(f"pred{i}_")]
-    print(f"pred{i}: {choices}")
-    if len(choices) != 1:
-        raise ValueError(f"Expected one pred{i} column, got {choices}")
-    pred_cols[i] = choices[0]
-
-print("Rows in ALL data:", len(audit_df))
-print("Possible split columns:",
-      [c for c in audit_df.columns
-       if any(k in c.lower() for k in ("split", "subset", "sample", "dataset", "partition", "set"))])
-
-# Set TEST_MASK using the actual TEST indicator/split from the notebook.
-# Example ONLY, if the notebook has a 'split' column:
-# TEST_MASK = audit_df["split"].astype(str).str.upper().eq("TEST")
-# Do not replace this with a guessed row fraction or reset index.
-
-assert "TEST_MASK" in globals(), (
-    "Define TEST_MASK from the notebook's actual TEST rows before counting"
-)
-assert len(TEST_MASK) == len(audit_df)
-assert pd.Series(TEST_MASK, index=audit_df.index).notna().all()
-TEST_MASK = pd.Series(TEST_MASK, index=audit_df.index).astype(bool)
-
-target = audit_df[TARGET].astype(int)
-p5_correct = audit_df[pred_cols[5]].astype(int).eq(target)
-hand_wrong = pd.concat(
-    [audit_df[pred_cols[i]].astype(int).ne(target) for i in range(5)],
-    axis=1,
-).all(axis=1)
-
-print("TEST rows:", TEST_MASK.sum())
-print("Tree correct on TEST:", (TEST_MASK & p5_correct).sum())
-print("All five hand rules wrong on TEST:", (TEST_MASK & hand_wrong).sum())
-print("Q3 unique correct on TEST:", (TEST_MASK & p5_correct & hand_wrong).sum())
-print("Unique correct on ALL rows:", (p5_correct & hand_wrong).sum())
+d = new_df
+target = 'is_positive_growth_30d_future'
+hand_cols = ['pred0_manual_cci','pred1_manual_prev_g1',
+             'pred2_manual_prev_g1_and_snp','pred3_manual_dgs10_5',
+             'pred4_manual_dgs10_fedfunds']
+p5 = 'pred5_clf_10'
+group = d['split'].astype(str).str.strip().str.upper()
+y = d[target]
+manual_wrong = d[hand_cols].ne(y, axis=0).all(axis=1)
+tree_correct = d[p5].eq(y)
+print('Row labels:',d.index.is_unique)
+print('Target NaNs per split:', y.isna().groupby(group).sum().to_dict())
+print('Pred5 NaNs per split:',d[p5].isna().groupby(group).sum().to_dict())
+print('Q3 diagnostics:')
+print(pd.DataFrame({
+    'rows':group.value_counts().sort_index(),
+    'positive_target':y.groupby(group).sum(),
+    'pred5_positive':d[p5].groupby(group).sum(),
+    'pred5_correct':tree_correct.groupby(group).sum(),
+    'all_five_manual_wrong':manual_wrong.groupby(group).sum(),
+    'unique_correct':(tree_correct & manual_wrong).groupby(group).sum()
+}).to_string())
+print('Prediction agreement with label by split:')
+print(pd.DataFrame({
+    c: d[c].eq(y).groupby(group).mean()
+    for c in hand_cols + [p5]
+}).round(4).to_string())
+print('Existing model object:', 'clf10' in globals())
+if 'clf10' in globals():
+    print('clf10 max_depth:',clf10.get_params().get('max_depth'))
+    print('clf10 random_state:',clf10.get_params().get('random_state'))
+    print('clf10 feature count:',getattr(clf10,'n_features_in_',None))
 ```
 
-**If TEST_MASK is unclear**, print the split-related column names and `new_df.head()` and inspect how `X_test` was built in the original notebook. Do not select 1171 simply because it is numerically closer to 1243. A mismatch can arise from filtering, row/index alignment, a missing hand rule, incorrect tree training data, or a TEST-mask error; none is proven from the pasted aggregate outputs alone.
-
-To preserve the actual implementation on GitHub: in the *executed* Colab choose File → Download → Download .ipynb and add that file under `hw03/`. No downloaded notebook has been synthesized here.
+Then compare how `clf10` was actually fitted, the complete feature list (including 60 `month_wom` dummies), and the row ordering of its predictions. Do not infer the correct answer from the options.
