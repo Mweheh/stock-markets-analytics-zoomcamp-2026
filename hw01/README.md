@@ -1,18 +1,14 @@
-# HW1 — Introduction and Data Sources
+# HW1 — Introduction and Financial Data
 
 - [Official assignment](https://github.com/DataTalksClub/stock-markets-analytics-zoomcamp/blob/main/cohorts/2026/homework1.md)
 - [Submission form](https://courses.datatalks.club/sma-zoomcamp-2026/homework/hw01)
-- [Archived answers and confidence flags](answers.json)
+- [Answer status](answers.json)
 
-## Earlier answers (historical, **not independently validated**)
+## Assignment
+- Q1: Year with most current S&P 500 constituent additions, from 2020 onward.
+- Q2: Number of world indices beating S&P 500 YTD as of 21 August 2026.
+- Q3: Median magnitude of S&P 500 corrections of at least 5%.
+- Q4: Median AMZN two-day return after positive earnings surprises.
+- Q5/Q6: Optional exploratory capstone proposal and additional metrics.
 
-| Question | Previously reported answer | Validation |
-| --- | --- | --- |
-| Q1 — S&P 500 additions since 2020 | 2025 | Needs notebook/data evidence |
-| Q2 — Indices outperforming S&P 500 in 2026 YTD | 2 | Needs notebook/data evidence |
-| Q3 — Median correction drawdown | 8 | Needs notebook/data evidence and units |
-| Q4 — AMZN median post-earnings return | 0.35 | Needs notebook/data evidence and units |
-
-The earlier submission received an incomplete score, so **do not treat these archived choices as a verified answer key**. No executed HW1 notebook was accessible in this conversation; none is fabricated here.
-
-Q5/Q6 are optional open-ended questions. Relevant capstone direction: investigate whether macroeconomic and supply-chain disruption indicators improve equity return prediction under time-ordered evaluation.
+**Evidence status:** Executed HW1 notebook and numeric answer evidence have not been made available for this repository build. No numerical answers are claimed. An earlier score was reported as incomplete, so submission status should be checked separately. Add the original executed notebook and verified answers before presenting this module as reproduced.
