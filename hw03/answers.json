@@ -51,7 +51,7 @@
     },
     "q5": {
       "status": "draft_in_README",
-      "text": "I would add VIX and trading volume. VIX shows how uncertain the market is, while trading volume shows how active a stock is. I think these indicators could help the model predict future stock growth."
+      "text": "I would add VIX and changes in trading volume as new features. A higher VIX can mean more market uncertainty, which may reduce the chance of positive returns. A big change in trading volume can show stronger buying or selling activity. These features may help the model predict if a stock will have a positive return in the next 30 days."
     }
   },
   "note": "TEST membership has been checked using new_df['split'] (33,163 test rows). The result remains 1243 and matches none of the options. Do not round or select the nearest option; inspect feature/model training and data alignment. Q3_AUDIT.md is temporary and should be removed when resolved."
