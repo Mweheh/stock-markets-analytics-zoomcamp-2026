@@ -30,7 +30,7 @@
         1171,
         1571
       ],
-      "status": "TEST_COUNT_CONFIRMED_BUT_NO_FORM_OPTION_MATCH;_MODEL_AND_FEATURE_AUDIT_PENDING",
+      "status": "UNRESOLVED_TEST_COUNT_1243;_HAND_RULE_COVERAGE_AND_MODEL_PROVENANCE_UNVERIFIED",
       "final_answer": null,
       "test_rows": 33163,
       "train_rows": 136842,
@@ -41,7 +41,19 @@
         "TEST": 1243
       },
       "unique_correct_all": 5347,
-      "test_filter_validated_from_colab_output": true
+      "test_filter_validated_from_colab_output": true,
+      "diagnostic": {
+        "index_unique": true,
+        "target_nan_all_splits": 0,
+        "pred5_nan_all_splits": 0,
+        "test_positive_target": 18906,
+        "test_pred5_positive": 8628,
+        "test_pred5_correct": 15831,
+        "test_all_five_manual_wrong": 2374,
+        "validation_all_five_manual_wrong": 0,
+        "validation_pred5_correct": 25030,
+        "clf10_variable_exists": false
+      }
     },
     "q4": {
       "value": 4,
