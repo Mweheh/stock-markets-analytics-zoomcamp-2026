@@ -30,7 +30,7 @@
         1171,
         1571
       ],
-      "status": "UNRESOLVED_1243_ON_TEST;_VALIDATION_ZERO_EXPLAINED;_MODEL_PROVENANCE_PENDING",
+      "status": "REPRODUCED_FROM_TREE10_BUT_NOT_IN_FORM_OPTIONS",
       "final_answer": null,
       "test_rows": 33163,
       "train_rows": 136842,
@@ -62,7 +62,25 @@
           "clf_10",
           "best_model",
           "tree10"
-        ]
+        ],
+        "model_reproduction": {
+          "model_name": "tree10",
+          "max_depth": 10,
+          "random_state": 42,
+          "training_rows": 169129,
+          "feature_count": 299,
+          "X_all_shape": [
+            202292,
+            299
+          ],
+          "pred5_match_rate": 1
+        },
+        "earlier_clf_10": {
+          "max_depth": 10,
+          "random_state": null,
+          "training_rows": 169129,
+          "feature_count": 239
+        }
       }
     },
     "q4": {
@@ -76,5 +94,5 @@
       "text": "I would add VIX and changes in trading volume as new features. A higher VIX can mean more market uncertainty, which may reduce the chance of positive returns. A big change in trading volume can show stronger buying or selling activity. These features may help the model predict if a stock will have a positive return in the next 30 days."
     }
   },
-  "note": "TEST filter and zero VALIDATION unique-correct count are explained. Q3 remains 1243 on TEST, not an offered answer. Next: verify the actual depth-10 model and full prediction features. Q3_AUDIT.md is temporary."
+  "note": "Q3 1243 reproduced exactly by tree10 max_depth=10, random_state=42, TRAIN+VALIDATION=169129, 299 features. No option matches. Do not guess or strip 60 feature dummies solely to match options. Temporary audit file should be removed after resolution."
 }
