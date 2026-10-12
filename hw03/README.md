@@ -20,6 +20,6 @@ Important: numerical data above comes from a pasted Colab output, not direct acc
 
 ## Q5 — Exploratory response (proposed)
 
-I would add VIX and trading volume. VIX shows how uncertain the market is, while trading volume shows how active a stock is. I think these indicators could help the model predict future stock growth.
+I would add VIX and changes in trading volume as new features. A higher VIX can mean more market uncertainty, which may reduce the chance of positive returns. A big change in trading volume can show stronger buying or selling activity. These features may help the model predict if a stock will have a positive return in the next 30 days.
 
 The homework asks to choose the best depth using TEST precision. That follows the assignment, but is not a clean out-of-sample methodology for real-world model selection; tune on validation data and reserve TEST for one final check in future projects.
